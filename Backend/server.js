@@ -22,7 +22,7 @@ const mongoDbString = process.env.ConnectionString;
 
 app.use(express.json());
 app.use(cors({
-  origin:["https://liverfrontend.vercel.app"],
+  origin:"https://liverfrontend.vercel.app",
   methods:["POST","GET","PUT","DELETE"],
   credentials:true
 }));
@@ -44,7 +44,7 @@ mongoose
   .connect(mongoDbString)
   .then(() => {
     console.log("Connected to MongoDB");
-    server.listen(PORT,"0.0.0.0",()=>console.log(`Server is listening on port : ${PORT}`))
+    // server.listen(PORT,"0.0.0.0",()=>console.log(`Server is listening on port : ${PORT}`))
   })
   .catch((err) => console.error("MongoDB connection error:", err));
-console.log("this is server");
+export default app;
