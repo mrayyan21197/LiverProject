@@ -22,7 +22,7 @@ const mongoDbString = process.env.ConnectionString;
 
 app.use(express.json());
 app.use(cors({
-  origin:[],
+  origin:["https://liverfrontend.vercel.app"],
   methods:["POST","GET","PUT","DELETE"],
   credentials:true
 }));
