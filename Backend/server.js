@@ -23,6 +23,7 @@ const mongoDbString = process.env.ConnectionString;
 app.use(express.json());
 app.use(cors());
 app.use(cookieParser());
+app.use(express.urlencoded({extended:false}));
 
 const myvar = "/api/auth";
 app.use(myvar, registrationRoutes);
