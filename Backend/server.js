@@ -20,11 +20,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
-app.use(cors({
-  origin:"https://liverfrontend.vercel.app",
-  methods:["POST","GET","PUT","DELETE"],
-  credentials:true
-}));
+app.use(cors());
 app.use(cookieParser());
 
 const myvar = "/api/auth";
