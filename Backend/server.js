@@ -8,11 +8,11 @@ import GetGig from "./Routes/Gig_Operations/get_gigs.js";
 import Order from "./Routes/Orders/Order.js";
 import Transaction from "./Routes/Transactions/Transaction.js";
 import Message from "./Routes/Messages/Messages.js";
-import cors from 'cors';
+import cors from "cors";
 import Review from "./Routes/Review/Review.js";
 import userRoutes from "./Routes/User/user.js";
 import cookieParser from "cookie-parser";
-
+import http from "http";
 
 dotenv.config();
 
@@ -24,21 +24,22 @@ app.use(express.json());
 app.use(cors());
 app.use(cookieParser());
 
-mongoose.connect(mongoDbString)
-  .then(() => console.log("Connected to MongoDB"))
-  .catch(err => console.error("MongoDB connection error:", err));
 const myvar = "/api/auth";
 app.use(myvar, registrationRoutes);
-app.use(myvar , ProfessionalInfo);
-app.use(myvar , CreateGig);
-app.use(myvar , GetGig);
-app.use(myvar , Order);
-app.use(myvar,Transaction);
-app.use(myvar , Message);
-app.use(myvar , Review)
-app.use(myvar,userRoutes );
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
-});
-
+app.use(myvar, ProfessionalInfo);
+app.use(myvar, CreateGig);
+app.use(myvar, GetGig);
+app.use(myvar, Order);
+app.use(myvar, Transaction);
+app.use(myvar, Message);
+app.use(myvar, Review);
+app.use(myvar, userRoutes);
+const server = http.createServer(app);
+mongoose
+  .connect(mongoDbString)
+  .then(() => {
+    console.log("Connected to MongoDB");
+    server.listen(PORT,()=>console.log(`Server is listening on port : ${PORT}`))
+  })
+  .catch((err) => console.error("MongoDB connection error:", err));
 console.log("this is server");
