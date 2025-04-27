@@ -18,7 +18,6 @@ dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const mongoDbString = process.env.ConnectionString;
 
 app.use(express.json());
 app.use(cors({
@@ -40,7 +39,7 @@ app.use(myvar, Review);
 app.use(myvar, userRoutes);
 const server = http.createServer(app);
 mongoose
-  .connect(mongoDbString)
+  .connect(process.env.ConnectionString)
   .then(() => {
     console.log("Connected to MongoDB");
     server.listen(PORT,"0.0.0.0",()=>console.log(`Server is listening on port : ${PORT}`))
