@@ -89,7 +89,7 @@ const Navbar = () => {
 
   const handleBecomeSeller = async () => {
     try {
-      const response = await axios.put("http://localhost:3000/api/auth/updateRole", 
+      const response = await axios.put("https://liverbackend.vercel.app/api/auth/updateRole", 
         { id: currentUser.id, newRole: "freelancer" },
         {
           headers: {

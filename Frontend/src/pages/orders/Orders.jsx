@@ -62,7 +62,7 @@ const Orders = () => {
     try {
       setLoading(true);
       const response = await axios.get(
-        `http://localhost:3000/api/auth/orders/${userId}`
+        `https://liverbackend.vercel.app/api/auth/orders/${userId}`
       );
       console.log(response.data);
       setOrders(response.data);
@@ -101,7 +101,7 @@ const Orders = () => {
       }
 
       const response = await axios.put(
-        `http://localhost:3000/api/auth/orders/complete/${submitOrderId}`,
+        `https://liverbackend.vercel.app/api/auth/orders/complete/${submitOrderId}`,
         formData,
         {
           headers: {
@@ -131,7 +131,7 @@ const Orders = () => {
     setProcessingAction(orderId + "-cancel");
     try {
       const response = await axios.delete(
-        `http://localhost:3000/api/auth/orders/cancel/${orderId}`
+        `https://liverbackend.vercel.app/api/auth/orders/cancel/${orderId}`
       );
 
       // Update the order status in our local state
@@ -175,7 +175,7 @@ const Orders = () => {
       };
 
       const response = await axios.post(
-        "http://localhost:3000/api/auth/addReview",
+        "https://liverbackend.vercel.app/api/auth/addReview",
         reviewData
       );
 

@@ -32,11 +32,11 @@ const AdminDashboard = () => {
         setIsLoading(true);
         
         // Fetch orders data using axios
-        const ordersResponse = await axios.get('http://localhost:3000/api/auth/getorders');
+        const ordersResponse = await axios.get('https://liverbackend.vercel.app/api/auth/getorders');
         const ordersData = ordersResponse.data;
         
         // Fetch users data using axios
-        const usersResponse = await axios.get('http://localhost:3000/api/auth/getUsers');
+        const usersResponse = await axios.get('https://liverbackend.vercel.app/api/auth/getUsers');
         // Handle the specific structure of users response
         const usersData = usersResponse.data.users || [];
         

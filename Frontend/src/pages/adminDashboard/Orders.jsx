@@ -27,7 +27,7 @@ const ManageOrders = () => {
   const fetchOrders = async () => {
     try {
       setLoading(true);
-      const response = await axios.get('http://localhost:3000/api/auth/getorders');
+      const response = await axios.get('https://liverbackend.vercel.app/api/auth/getorders');
       
       // Process data for both orders and transactions
       const allOrders = response.data.map(order => ({
@@ -83,7 +83,7 @@ const ManageOrders = () => {
     try {
       setLoading(true);
       console.log(selectedItem.id)
-       await axios.delete(`http://localhost:3000/api/auth/orders/cancel/${selectedItem.id}`);
+       await axios.delete(`https://liverbackend.vercel.app/api/auth/orders/cancel/${selectedItem.id}`);
       
       // After successful cancellation, refresh the data
       await fetchOrders();

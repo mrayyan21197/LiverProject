@@ -90,7 +90,7 @@ const Messages = () => {
     const fetchMessages = async () => {
       try {
         setLoading(true);
-        const response = await axios.get("http://localhost:3000/api/auth/messages/all");
+        const response = await axios.get("https://liverbackend.vercel.app/api/auth/messages/all");
         console.log(response.data);
         if (response.data.success) {
           setMessages(response.data.messages);
@@ -141,7 +141,7 @@ const Messages = () => {
         : message.sender_id?._id;
       
       // Call the API
-      await axios.put(`http://localhost:3000/api/auth/messages/read/${messageId}/${receiverId}`);
+      await axios.put(`https://liverbackend.vercel.app/api/auth/messages/read/${messageId}/${receiverId}`);
       
       // Update UI
       setMessages(messages.map(msg => 

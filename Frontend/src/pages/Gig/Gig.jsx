@@ -37,7 +37,7 @@ function Gig() {
       try {
         setLoading(true);
         const response = await fetch(
-          `http://localhost:3000/api/auth/gig/${id}`
+          `https://liverbackend.vercel.app/api/auth/gig/${id}`
         );
 
         if (!response.ok) {
@@ -130,7 +130,7 @@ function Gig() {
         requirements: requirementText,
       };
 
-      const response = await fetch("http://localhost:3000/api/auth/orders", {
+      const response = await fetch("https://liverbackend.vercel.app/api/auth/orders", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

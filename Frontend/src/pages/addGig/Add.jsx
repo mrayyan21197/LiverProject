@@ -89,7 +89,7 @@ const Add = () => {
     };
 
     try {
-      const res = await axios.post("http://localhost:3000/api/auth/create/gig", gigData);
+      const res = await axios.post("https://liverbackend.vercel.app/api/auth/create/gig", gigData);
       console.log("Gig created successfully:", res.data);
       setSuccess("Gig created successfully!");
       setTitle("");

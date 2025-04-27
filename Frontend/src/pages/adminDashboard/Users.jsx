@@ -631,7 +631,7 @@ const Users = () => {
       try {
         setLoading(true);
         const response = await axios.get(
-          "http://localhost:3000/api/auth/getUsers"
+          "https://liverbackend.vercel.app/api/auth/getUsers"
         );
         setUsersData(response.data.users || []);
         setError(null);
@@ -809,7 +809,7 @@ const Users = () => {
   const confirmDelete = async () => {
     try {
       await axios.delete(
-        `http://localhost:3000/api/auth/deleteUser/${selectedItem.id}`
+        `https://liverbackend.vercel.app/api/auth/deleteUser/${selectedItem.id}`
       );
       // Remove the deleted user from state
       setUsersData(usersData.filter((user) => user._id !== selectedItem.id));

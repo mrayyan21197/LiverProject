@@ -70,14 +70,14 @@ const Gigs = () => {
           if (filters.maxPrice) params.max = filters.maxPrice;
 
           response = await axios.get(
-            `http://localhost:3000/api/auth/gigs/budget`,
+            `https://liverbackend.vercel.app/api/auth/gigs/budget`,
             { params }
           );
         }
         // Check if we're searching by text
         else if (filters.search) {
           response = await axios.get(
-            `http://localhost:3000/api/auth/gigs/search/${filters.search}`
+            `https://liverbackend.vercel.app/api/auth/gigs/search/${filters.search}`
           );
         }
         // Check if we're filtering by tags
@@ -85,14 +85,14 @@ const Gigs = () => {
           // Create a query string with all selected tags joined by a space
           const tagQuery = filters.tags.join(" ");
           response = await axios.get(
-            `http://localhost:3000/api/auth/gigs/search/${encodeURIComponent(
+            `https://liverbackend.vercel.app/api/auth/gigs/search/${encodeURIComponent(
               tagQuery
             )}`
           );
         }
         // Default fetch - just get all gigs
         else {
-          response = await axios.get("http://localhost:3000/api/auth/gigs");
+          response = await axios.get("https://liverbackend.vercel.app/api/auth/gigs");
         }
 
         let fetchedGigs =

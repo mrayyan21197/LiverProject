@@ -318,7 +318,7 @@ useEffect(() => {
       }
       
       // Fetch all users and find the one matching the current user's ID
-      const response = await axios.get('http://localhost:3000/api/auth/getUsers');
+      const response = await axios.get('https://liverbackend.vercel.app/api/auth/getUsers');
       
       // Find the user with the matching ID who is a freelancer
       const freelancer = response.data.users.find(

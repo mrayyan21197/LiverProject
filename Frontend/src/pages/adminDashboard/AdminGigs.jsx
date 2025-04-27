@@ -17,7 +17,7 @@
 //         setLoading(true);
 //         // Using axios with the correct endpoint; no query parameters for now
 //         const params = {};
-//         const response = await axios.get("http://localhost:3000/api/auth/gigs", { params });
+//         const response = await axios.get("https://liverbackend.vercel.app/api/auth/gigs", { params });
         
 //         if (response.status !== 200) {
 //           throw new Error("Failed to fetch gigs");
@@ -206,7 +206,7 @@ const AdminGigs = () => {
       setLoading(true);
       // Using axios with the correct endpoint; no query parameters for now
       const params = {};
-      const response = await axios.get("http://localhost:3000/api/auth/gigs", { params });
+      const response = await axios.get("https://liverbackend.vercel.app/api/auth/gigs", { params });
       
       if (response.status !== 200) {
         throw new Error("Failed to fetch gigs");
@@ -239,7 +239,7 @@ const AdminGigs = () => {
   const handleApproveGig = async (gigId) => {
     try {
       setProcessingGigId(gigId);
-      const response = await axios.put(`http://localhost:3000/api/auth/gig/approve/${gigId}`);
+      const response = await axios.put(`https://liverbackend.vercel.app/api/auth/gig/approve/${gigId}`);
       
       if (response.status === 200) {
         // Update the gig status locally
@@ -260,7 +260,7 @@ const AdminGigs = () => {
     if (window.confirm("Are you sure you want to reject and delete this gig?")) {
       try {
         setProcessingGigId(gigId);
-        const response = await axios.delete(`http://localhost:3000/api/auth/gig/${gigId}`);
+        const response = await axios.delete(`https://liverbackend.vercel.app/api/auth/gig/${gigId}`);
         
         if (response.status === 200) {
           // Remove the gig from the local state

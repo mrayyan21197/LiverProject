@@ -163,7 +163,7 @@
 //       // Make the API request with explicit configuration
 //       const response = await axios({
 //         method: 'post',
-//         url: 'http://localhost:3000/api/auth/professional_info',
+//         url: 'https://liverbackend.vercel.app/api/auth/professional_info',
 //         data: requestData,
 //         headers: {
 //           'Content-Type': 'application/json',
@@ -633,7 +633,7 @@ const VerificationPage = () => {
 
       // Make the API request without authentication header
       const response = await axios.get(
-        `http://localhost:3000/api/auth/getUser/${currentUser.id}`,
+        `https://liverbackend.vercel.app/api/auth/getUser/${currentUser.id}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -873,7 +873,7 @@ const VerificationPage = () => {
 
       // Make the API request with explicit configuration
       const response = await axios.post(
-        "http://localhost:3000/api/auth/professional_info",
+        "https://liverbackend.vercel.app/api/auth/professional_info",
         requestData
       );
 

@@ -51,7 +51,7 @@
 //     if (!validateForm()) return;
   
 //     try {
-//       const apiUrl = `http://localhost:3000/api/auth/${type}`;
+//       const apiUrl = `https://liverbackend.vercel.app/api/auth/${type}`;
 //       const response = await axios.post(apiUrl, user); 
   
 //       if (type === "login") {
@@ -312,7 +312,7 @@ const Register = () => {
     }
   
     try {
-      const apiUrl = `http://localhost:3000/api/auth/${type}`;
+      const apiUrl = `https://liverbackend.vercel.app/api/auth/${type}`;
       const response = await axios.post(apiUrl, user); 
   
       if (type === "login") {

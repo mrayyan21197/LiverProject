@@ -21,7 +21,7 @@ const Message = ({id:propsId}) => {
       try {
         // Check if the ID is a valid gig ID first
         try {
-          const gigResponse = await axios.get(`http://localhost:3000/api/auth/gig/${id}`);
+          const gigResponse = await axios.get(`https://liverbackend.vercel.app/api/auth/gig/${id}`);
           
           // Check if we got valid gig data
           if (gigResponse.data && gigResponse.data._id === id) {
@@ -37,7 +37,7 @@ const Message = ({id:propsId}) => {
         }
         
         // If not a gig ID, check if it's a message ID
-        const messagesResponse = await axios.get("http://localhost:3000/api/auth/messages/all");
+        const messagesResponse = await axios.get("https://liverbackend.vercel.app/api/auth/messages/all");
         
         if (messagesResponse.data.success && messagesResponse.data.messages) {
           // Find the message that matches the ID from params
@@ -94,7 +94,7 @@ const Message = ({id:propsId}) => {
       try {
         setLoading(true);
         const response = await axios.get(
-          `http://localhost:3000/api/auth/chat/${userId}/${receiverId}`
+          `https://liverbackend.vercel.app/api/auth/chat/${userId}/${receiverId}`
         );
         setMessages(response.data.chat || []);
 
@@ -116,7 +116,7 @@ const Message = ({id:propsId}) => {
         if (unreadMessages.length > 0) {
           try {
             // Use your updated API endpoint for marking messages as read
-            await axios.put(`http://localhost:3000/api/auth/messages/read/${id}/${userId}`);
+            await axios.put(`https://liverbackend.vercel.app/api/auth/messages/read/${id}/${userId}`);
           } catch (error) {
             console.error("Error marking messages as read:", error);
           }
@@ -140,7 +140,7 @@ const Message = ({id:propsId}) => {
     if (!newMessage.trim() || !userId || !receiverId) return;
 
     try {
-      const response = await axios.post("http://localhost:3000/api/auth/messages", {
+      const response = await axios.post("https://liverbackend.vercel.app/api/auth/messages", {
         sender_id: userId,
         receiver_id: receiverId,
         content: newMessage,
