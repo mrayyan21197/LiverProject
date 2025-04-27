@@ -21,7 +21,11 @@ const PORT = process.env.PORT || 3000;
 const mongoDbString = process.env.ConnectionString;
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin:[],
+  methods:["POST","GET","PUT","DELETE"],
+  credentials:true
+}));
 app.use(cookieParser());
 app.use(express.urlencoded({extended:false}));
 
