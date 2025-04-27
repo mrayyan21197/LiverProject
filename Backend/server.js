@@ -27,7 +27,6 @@ app.use(cors({
   credentials:true
 }));
 app.use(cookieParser());
-app.use(express.urlencoded({extended:false}));
 
 const myvar = "/api/auth";
 app.use(myvar, registrationRoutes);
@@ -47,4 +46,9 @@ mongoose
     server.listen(PORT,"0.0.0.0",()=>console.log(`Server is listening on port : ${PORT}`))
   })
   .catch((err) => console.error("MongoDB connection error:", err));
+
+  app.get("/", (req, res) => {
+    res.send("Backend server is running ✅");
+  });
+  
 export default app;
