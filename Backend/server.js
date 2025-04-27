@@ -43,7 +43,4 @@ mongoose
     server.listen(PORT,()=>console.log(`Server is listening on port : ${PORT}`))
   })
   .catch((err) => console.error("MongoDB connection error:", err));
-app.get("/",async(req, res)=>{
-  res.send("Hello");
-})
 console.log("this is server");
