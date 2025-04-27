@@ -6,6 +6,7 @@ import {
   Navigate,
   Outlet,
 } from "react-router-dom";
+import axios from "axios";
 import "./App.css";
 import CustomNavbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
