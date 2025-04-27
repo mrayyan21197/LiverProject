@@ -1,0 +1,21 @@
+/* Add smooth transitions */
+.verification-container {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Keyframe animation for smooth appearance */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Style the progress bar for better appearance */
+.progress-bar {
+  transition: width 0.3s ease-in-out;
+}
